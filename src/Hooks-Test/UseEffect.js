@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 const UseEffect = () => {
-  const [name, setName] = useState("");
-  const [nickname, setNickname] = useState("");
+  const [name, setName] = useState('');
+  const [nickname, setNickname] = useState('');
 
   useEffect(() => {
-    console.log("name만");
+    console.log('name만');
     console.log(name);
     return () => {
-      console.log("cleanup");
+      console.log('cleanup');
       console.log(name);
     };
   }, []);
 
-  const onChangeName = (e) => {
+  const onChangeName = e => {
     setName(e.target.value);
   };
 
-  const onChangeNickname = (e) => {
+  const onChangeNickname = e => {
     setNickname(e.target.value);
   };
 

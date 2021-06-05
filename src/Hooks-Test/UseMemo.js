@@ -1,8 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState } from 'react';
 
-const getAverage = (numbers) => {
-  console.log("평균 값 계산중...");
-  console.log("길이값은?", numbers.length);
+const getAverage = numbers => {
+  console.log('평균 값 계산중...');
+  console.log('길이값은?', numbers.length);
   if (numbers.length === 0) return 0;
   const sum = numbers.reduce((a, b) => a + b);
   return sum / numbers.length;
@@ -10,16 +10,16 @@ const getAverage = (numbers) => {
 
 const UseMemo = () => {
   const [list, setList] = useState([]);
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState('');
 
-  const onChange = (e) => {
+  const onChange = e => {
     setNumber(e.target.value);
   };
 
-  const onInsert = (e) => {
+  const onInsert = e => {
     const nextList = list.concat(parseInt(number));
     setList(nextList);
-    setNumber("");
+    setNumber('');
   };
 
   const avg = useMemo(() => getAverage(list), [list]);

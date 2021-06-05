@@ -1,8 +1,8 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from 'react';
 
-const getAverage = (numbers) => {
-  console.log("평균 값 계산중...");
-  console.log("길이값은?", numbers.length);
+const getAverage = numbers => {
+  console.log('평균 값 계산중...');
+  console.log('길이값은?', numbers.length);
   if (numbers.length === 0) return 0;
   const sum = numbers.reduce((a, b) => a + b);
   return sum / numbers.length;
@@ -10,17 +10,17 @@ const getAverage = (numbers) => {
 
 const UseCallback = () => {
   const [list, setList] = useState([]);
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState('');
 
-  const onChange = useCallback((e) => {
+  const onChange = useCallback(e => {
     setNumber(e.target.value);
   }, []);
 
   const onInsert = useCallback(
-    (e) => {
+    e => {
       const nextList = list.concat(parseInt(number));
       setList(nextList);
-      setNumber("");
+      setNumber('');
     },
     [number, list]
   );

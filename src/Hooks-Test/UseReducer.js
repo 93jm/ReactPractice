@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer } from 'react';
 
 function reducer(state, action) {
   return {
@@ -9,11 +9,11 @@ function reducer(state, action) {
 
 const UseReducer = () => {
   const [state, dispatch] = useReducer(reducer, {
-    name: "",
-    nickname: "",
+    name: '',
+    nickname: '',
   });
   const { name, nickname } = state;
-  const onChange = (e) => {
+  const onChange = e => {
     console.log(e.target);
     dispatch(e.target);
   };
