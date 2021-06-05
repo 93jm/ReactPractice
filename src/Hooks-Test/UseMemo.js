@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 const getAverage = numbers => {
+  console.log('usememo');
   console.log('평균 값 계산중...');
   console.log('길이값은?', numbers.length);
   if (numbers.length === 0) return 0;
